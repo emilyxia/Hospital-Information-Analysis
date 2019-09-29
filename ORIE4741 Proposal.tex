@@ -1,0 +1,73 @@
+\documentclass[12pt]{extarticle}
+%Some packages I commonly use.
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1 in,bottom=1in, left=1 in, right=1 in]{geometry}
+
+%A bunch of definitions that make my life easier
+\newcommand{\matlab}{{\sc Matlab} }
+\newcommand{\cvec}[1]{{\mathbf #1}}
+\newcommand{\rvec}[1]{\vec{\mathbf #1}}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\khat}{\hat{\textbf{k}}}
+\newcommand{\minor}{{\rm minor}}
+\newcommand{\trace}{{\rm trace}}
+\newcommand{\spn}{{\rm Span}}
+\newcommand{\rem}{{\rm rem}}
+\newcommand{\ran}{{\rm range}}
+\newcommand{\range}{{\rm range}}
+\newcommand{\mdiv}{{\rm div}}
+\newcommand{\proj}{{\rm proj}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\attn}[1]{\textbf{#1}}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{note}{Note}
+\newtheorem{exercise}{Exercise}
+\newcommand{\bproof}{\bigskip {\bf Proof. }}
+\newcommand{\eproof}{\hfill\qedsymbol}
+\newcommand{\Disp}{\displaystyle}
+\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\setlength{\columnseprule}{1 pt}
+\usepackage{hyperref}
+
+\title{ORIE 4741 Project Proposal}
+\author{Anusha Avyukt (aa2686), Fei Xia (fx43), Siyang Liu (sl2687)}
+\date{September 29th, 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Our Problem}
+People nowadays are being restricted by Health Insurance provider to visit only certain hospitals. We are interested in improving such cumbersome healthcare system by using the new data provided by NY state about in-patients visits across all hospitals in the state. We want to make smarter decision making when choosing hospital for a selective surgery or a medical condition. Here we will consider situations such as emergency cases, severe chronic diseases, small diseases with light condition and so on. Features to consider include severity of illness, cost, number of procedures, distance etc. combined with other metrics such as re-admissions rate and hospital quality. We will also explore the possibility of pre-diagnosis of the disease based on the patient’s health reports for selecting the best hospital.
+
+\section{Example Dataset}
+The Statewide Planning and Research Cooperative System (SPARCS) inpatient de-Identified dataset provides details on patient characteristics, diagnoses, treatments, services, and charges. This data contains basic record level detail regarding the discharge; however, the data does not contain protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA). Till now, there are 2.54 million rows and 34 columns entries in the dataset.\\
+\url{health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/u4ud-w55t}\\
+\url{www.kaggle.com/c/pf2012}
+
+\section{Problem Significance}
+Healthcare system is now experiencing a revolution. Finding and recommending the most suitable hospital under a given condition can be particularly challenging to for selective procedures. If we can make this search task easier, we would be able to positively affect thousands of lives every year.
+
+
+
+\end{document}
