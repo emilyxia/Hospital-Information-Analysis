@@ -1,4 +1,4 @@
-#Project: Hospital Information Analysis
+Project: Hospital Information Analysis
 
 ORIE4741 Fall Project
 
