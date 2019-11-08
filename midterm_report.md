@@ -10,7 +10,7 @@ Specifically, the dataset provides information on service area, age group/gender
 
 ## 3. Data Exploration Analysis
 To better understand how the emergency charges are affected by the conditions of the patients and hospitals, we plotted the total charges of emergency versus health service area, counties, type of disease, payment types, medical procedures (non-surgical or surgical). Below we only show four of the plots due to the space limit of the repot. According to the given dataset, we found that most of the medical charges for emergency lie between 0 - 20,000 dollars, with a mean of 18,800 dollars. In Figure (a), we showed the total charges difference across difference health service areas. We found Hudson Valley and Long Island has the highest mean charges. In Figure (b), we showed the differences in hospital choices across disease types, and found that there could be potential expertise difference of the hospitals that obviously attract patients with certain diseases. In Figure (c), we showed the charges across different payment type and found that self-pay produces the lowest charges. In Figure (d), we showed that certain hospitals attracts more 0-17 age group patients meaning more children related expertise. The data exploration analysis helped us determined intuitively the features that can be considered for the modeling part.
-
+![](Figure.png)
 
 
 ## 4. Feature Selection
