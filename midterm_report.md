@@ -1,6 +1,6 @@
 # ORIE 4741 Midterm Report
 #### Anusha Avyukt (aa2686), Fei Xia (fx43), Siyang Liu (sl2687)
-###1. Problem Statement
+### 1. Problem Statement
 Our project focuses on hospital selection for emergency cases, based on patients’ medical conditions and other relevant features. Given a patient’s personal information, we want to give an estimate of total charges and length of stay. We hope to develop a strategy to find a best fit that meet the patients’ need.
 ## 2.Dataset
 ### 2.1 Data Description
