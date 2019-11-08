@@ -27,7 +27,7 @@ To better understand how the emergency charges are affected by the conditions of
 ## 4. Feature Selection
 We also explored feature selection more quantitatively using Random Forests model. Random Forests model can naturally select the most important features for a specific regression target. Our Random Forest model returns the top 7 important factors that influence the total charges in emergency: length of stay, medical diagnosis category, medical surgery types, hospital, service area, severity of illness and hospital county. We will use these 7 features as the main feature of consideration in our future analysis. 
 
-The simple linear regression fitting all the variables has adjusted R squared score = 0.8. 
+The simple linear regression fitting all the variables has R squared score = 0.8. 
 The analysis would definitely benefit from adding more features which can capture quality of the hospital and costs in emergency and avoid the problem of underfitting. With a limited number of features, we may be underfitting and need to run regularized models while including more data.  As expected, the length of stay is an important explanatory variable as seen from the graph below. 
 
 <img src="figure2.PNG"
