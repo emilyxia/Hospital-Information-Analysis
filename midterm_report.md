@@ -45,11 +45,4 @@ Our next step will be more focused on the modeling for the total charges based o
 
 We will however we expanding the feature set by looking at the number of beds available, insurance coverage of the patient, income and economic information at the county and average household level to analyze how that can be factored into recommendation for hospital in an emergency situation.  Our feature space can then consider severity of illness along with other indicators of hospital quality.
  
-Towards this end, we will be merging the current dataset with 
-
-All Payer Inpatient Quality Indicators (IQI) by Hospital (SPARCS)
-All Payer Inpatient Quality Indicators (IQI) Composite Measures by Hospital (SPARCS):
-All Payer Patient Safety Indicators (PSI) Composite Measures by Hospital
-Hospital Inpatient Potentially Preventable Readmission (PPR) Rates by Hospital (SPARCS)
-US Census Small Area Income & Poverty Estimates (SAIPE) 2012 for NY counties
-
+Towards this end, we will be merging the current dataset with All Payer Inpatient Quality Indicators (IQI) by Hospital (SPARCS), All Payer Inpatient Quality Indicators (IQI) Composite Measures by Hospital (SPARCS), All Payer Patient Safety Indicators (PSI) Composite Measures by Hospital,Hospital Inpatient Potentially Preventable Readmission (PPR) Rates by Hospital (SPARCS), US Census Small Area Income & Poverty Estimates (SAIPE) 2012 for NY counties.
