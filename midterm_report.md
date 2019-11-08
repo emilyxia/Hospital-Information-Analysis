@@ -21,7 +21,7 @@ To better understand how the emergency charges are affected by the conditions of
 
 <img src="Figure.PNG"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 5px;" />
 
 
 ## 4. Feature Selection
