@@ -21,7 +21,7 @@ To better understand how the emergency charges are affected by the conditions of
 
 <img src="Figure.PNG"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 5px;" />
+     style="float: left; margin-right: 10px;" />
 
 
 ## 4. Feature Selection
@@ -29,9 +29,10 @@ We also explored feature selection more quantitatively using Random Forests mode
 
 The simple linear regression fitting all the variables has adjusted R squared score = 0.8. 
 The analysis would definitely benefit from adding more features which can capture quality of the hospital and costs in emergency and avoid the problem of underfitting. With a limited number of features, we may be underfitting and need to run regularized models while including more data.  As expected, the length of stay is an important explanatory variable as seen from the graph below. 
+
 <img src="figure2.PNG"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 20px;" />
      
 We also found that the total charges can vary a lot for severity of illness, across different groups such as age, ethnicity, and gender. A more careful analysis of the role of these personal characteristics in emergency hospital visits is thus an important step in further analysis. Do these factors really matter or there are other explanations at play. 
 
