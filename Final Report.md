@@ -46,9 +46,6 @@ The simple linear regression fitting all the variables has an R squared score = 
      
 We also found that the total charges can vary a lot for severity of illness, across different groups such as age, ethnicity, and gender. A more careful analysis of the role of these personal characteristics in emergency hospital visits is thus an important step in further analysis. Do these factors really matter or there are other explanations at play. 
 
-<img src="Figure3.PNG"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
 
 ## 5. Model fitting and analysis 
 Our initial intuition was that location will be an important criteria in selection of hospitals in emergency situations and thus zip code would be an important variable to consider. Note that the zip code data is this dataset is trimmed from 5 digits to 3 to protect patient’s privacy. Comparison of training and test errors of the model with and without zip code shows that there is minimal difference between the two and thus we select the more parsimonious model. 
@@ -64,48 +61,6 @@ Towards this end, we will be merging the current dataset with All Payer Inpatien
 
 
 
-  Models Comparison
-
-
-Septicemia
-Congestive heart failure
-mood disorders
-Linear regression
-Train MSE
-0.238
-0.154
-0.0858
-Test MSE
-0.241
-0.159
-0.0853
-Lasso regression
-Train MSE
-0.240
-0.153
-0.085
-Test MSE
-0.244
-0.157
-0.085
-Ridge regression
-Train MSE
-0.117
-0.156
-0.0858
-Test MSE
-0.117
-0.160
-0.0850
-Random Forest
-Train MSE
-0.0174
-0.0155
-0.0052
-Test MSE
-0.0398
-0.0344
-0.0144
 
 
 Results
