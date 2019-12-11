@@ -1,5 +1,5 @@
 # ORIE 4741 Midterm Report
-#### Anusha Avyukt (aa2686), Fei Xia (fx43), Siyang Liu (sl2687)
+#### Anusha Avyukt (aa2686), Fei Xia (fx43), Siyang Liu (sl2687).
 ### 1. Problem Statement
 When seeking medical treatment, there are constraints posed by health insurance provider to visit certain hospitals covered by the insurance policy. Our project focuses on hospital selection for emergency cases, based on patients’ medical conditions and other relevant features.
 
