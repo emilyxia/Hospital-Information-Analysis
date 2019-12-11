@@ -40,7 +40,7 @@ The simple linear regression fitting all the variables has an R squared score = 
 
 
 
-<img src="figure4.PNG"
+<img src="LR.PNG"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 40px;" />
      
@@ -50,9 +50,97 @@ We also found that the total charges can vary a lot for severity of illness, acr
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
-## 5. Future Work
+## 5. Model fitting and analysis 
+Our initial intuition was that location will be an important criteria in selection of hospitals in emergency situations and thus zip code would be an important variable to consider. Note that the zip code data is this dataset is trimmed from 5 digits to 3 to protect patient’s privacy. Comparison of training and test errors of the model with and without zip code shows that there is minimal difference between the two and thus we select the more parsimonious model. 
+
+Here we are presenting results for the model fitted without the zip code, for each of the diseases using Ridge regression and Random Forest Regression which gives the feature importance. 
+
+### Septicemia
 Our next step will be more focused on the modeling for the total charges based on the features we selected. Since the focus is on hospital selection for emergency cases, we would look at the factors like the type of illness, insurance coverage, distance, age and personal characteristics and how they impact the cost of emergency hospital visits. Since total charges is the only way to evaluate the quality of care available at a hospital, it will be difficult to rank them on the quality of doctors, or quality of care. 
 
 We will however we expanding the feature set by looking at the number of beds available, insurance coverage of the patient, income and economic information at the county and average household level to analyze how that can be factored into recommendation for hospital in an emergency situation.  Our feature space can then consider severity of illness along with other indicators of hospital quality.
  
 Towards this end, we will be merging the current dataset with All Payer Inpatient Quality Indicators (IQI) by Hospital (SPARCS), All Payer Inpatient Quality Indicators (IQI) Composite Measures by Hospital (SPARCS), All Payer Patient Safety Indicators (PSI) Composite Measures by Hospital,Hospital Inpatient Potentially Preventable Readmission (PPR) Rates by Hospital (SPARCS), US Census Small Area Income & Poverty Estimates (SAIPE) 2012 for NY counties.
+
+
+
+  Models Comparison
+
+
+Septicemia
+Congestive heart failure
+mood disorders
+Linear regression
+Train MSE
+0.238
+0.154
+0.0858
+Test MSE
+0.241
+0.159
+0.0853
+Lasso regression
+Train MSE
+0.240
+0.153
+0.085
+Test MSE
+0.244
+0.157
+0.085
+Ridge regression
+Train MSE
+0.117
+0.156
+0.0858
+Test MSE
+0.117
+0.160
+0.0850
+Random Forest
+Train MSE
+0.0174
+0.0155
+0.0052
+Test MSE
+0.0398
+0.0344
+0.0144
+
+
+Results
+
+Based on the graphs and table above, length of stay is clearly the most significant factor for total charges.  Total charges are also found to be related to the median income level, the location of the hospital, the severity of illness, at risk admission, the drug being used and the facility ID (the quality indicators of the hospitals). Notably, consider the features selected by Random forest and Ridge regression for the cases of congestive heart failure. Apart from length of stay which is common in between both the models, Random forest model picks on more indicators related to diseases and financial information which can be interpreted as patient information predicting the total charges whereas the Ridge regression is selecting dummies for hospitals, which implies that certain hospitals are more expensive controlling for patient characteristics. Both the models find the Facility_ID 3058 to be important, and that corresponds to the hospital 
+
+Within the top 3 most prevalent diseases, we found congestive heart failure gives the best linear fit between the length of stay and total charges with train/test mean squared error (mse) to be 0.0799/0.0810. Demographic data was also found to have predictive information for total charges i.e. median income level, poverty estimates, all ages and  the location of the hospital were found to have significant coefficients. 
+
+
+
+
+
+Fairness Metrics 
+
+It is crucial to consider fairness of the algorithm we use for classification as the differences for protected attributes can change the health outcomes for certain populations. If the hospital charges more from certain groups, then the lack of parity will change the data distribution in the future and make that disease more problematic for certain groups, affecting the quality of life. From the hospital regulation perspective, fairness implies that expenses for treating any disease must be the same, regardless of the age group, adjusting the for the base rate or differences between the groups. In the context of our study, statistical parity makes sense to check for disparate treatment of groups. 
+
+
+We look at the data for mood disorder and classify hospital charges as more or less than $40000 using Random forest classifier for two protected attributes, age and gender. Disparate treatment, i.e. treatment must not explicitly depend on the group. This fairness metric shows that the average charges for old people, above the age of 70 is much larger than other groups while there is no difference in the average charges for males vs females. As mood disorder can call for more treatment and care for older patients compared to younger patients, this metric is capturing the differential charges. We can conclude whether the classifier is fair or not, based only on the values of this metric after accounting for the base rate differences in treatment for age groups. For the attribute sex, this classifier is fair in terms of statistical parity i.e. there is no difference between males and females, for hospital cost of  treating mood disorder.  
+
+
+
+
+
+
+Weapons of Math Destruction? 
+Our model predictions and selection of hospitals to visit, can produce a weapon of math destruction, in both positive and negative directions. If certain hospitals are deemed to be more expensive for treatment, it could reduce the number of patients visiting that hospital, thus driving up the expenses of that hospital, making it even more expensive, and in some cases, driving the hospital out of business. If certain less known hospitals are recommended, then it can be a self fulfilling prophecy by bringing more patients and improving the scale of operations and medical expertise for that disease or if this selection was a false positive, the patient visiting that treatment may not get adequate care and treatment, which will affect quality of life of patients visiting that hospital. Either ways, the model predictions have altered the data distribution and can affect the metrics by which hospitals are evaluated, thus changing the allocation of resources within a hospital with consequences for patients relying on quality care at affordable prices. 
+
+
+
+
+Conclusions: 
+
+
+Limitations and Further work
+Although we have a large dataset, we did not have variables to measure the quality of care or variables to explain the hospital charges and thus give a ranking of hospitals. An ordinal regression to rank the hospitals would be informative in recommendations. An unsupervised learning algorithm could also be used to cluster the hospitals based on their specialities and the patient characteristics. What we care about the most in life threatening situations is the timeliness and quality of care, which cannot be adequately captured by the hospital charges. Measures to capture the quality of care would thus help build a better predictive system and from a broader perspective, in choosing the location and medical expertise based on the requirements of the demographic population. 
+
+For including the zip codes, instead of one hot encoding, we wanted to include the additional census information and fit a generalized low rank model that condenses the information into a small vector. In future work, we would like to explore more spatial variables for assessing hospital charges and quality of care. 
+
