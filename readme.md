@@ -1,4 +1,4 @@
-# ORIE 4741 Final Report
+# Hospital Information Analysis - ORIE 4741 Final Report
 #### Anusha Avyukt (aa2686), Fei Xia (fx43), Siyang Liu (sl2687).
 ### Problem Statement
 When seeking medical treatment, there are constraints posed by the type of disease, emergency level, location of the patient, health insurance and other patient characteristics like income, age etc, to visit certain hospitals. The overall purpose of our analysis is to help the patient select a hospital based on their medical condition and personal information. Our project considers factors critical to hospital selection in emergency situations of septicemia, mood disorders and congestive heart failure, as these are the most prevalent diseases in our dataset. It would be ideal to have a model which can help in hospital selection for any disease but apart from prediction, we also want to understand the factors which increase expenses in the emergency situation. For this purpose, we narrow the scope of the study to these three diseases, to analyze the difference in features which contribute to hospital charges for the treatment. 
